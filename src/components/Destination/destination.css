@@ -1,0 +1,244 @@
+/* destination.css */
+
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+overflow-y: auto !important;
+}
+
+
+/* Navbar Styles */
+.destination-details {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Banner section */
+.banner-section {
+  position: relative;
+  width: 100%;
+}
+
+.banner-section img {
+  width: 100%;
+  height: auto;
+}
+
+/* Content container */
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.discount-box {
+  flex: 1 1 100%;
+  margin-bottom: 20px;
+}
+
+.discount-banner {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Destination Info */
+.destination-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.destination-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.details {
+  flex: 1;
+}
+
+.destination-name {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.destination-description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #777;
+}
+
+.additional-info {
+  margin-top: 20px;
+}
+
+.additional-info p {
+  font-size: 1rem;
+}
+
+.additional-info strong {
+  color: #333;
+}
+
+/* Destination Packages */
+.destination-package {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.destination-package h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.package-list-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.package-item {
+  background-color: #fff;
+  padding: 20px 35px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+  text-align: center;
+}
+
+.package-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.package-item p {
+  margin-bottom: 10px;
+}
+
+.book-now-btn {
+  padding: 10px 15px;
+  background-color: #cc6073;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #1c5fbb;
+}
+
+/* Loading text */
+.loading-text {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 20px;
+}
+.package-item h3 {
+  color: #2e4c82;
+  font-weight: 600;
+  font-size: 22px;
+  margin: 16px 0;
+}
+
+/* Navbar */
+
+/* Navbar Dropdown Styling */
+.navbar-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.destination-select {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #cc6073; /* Green border */
+  border-radius: 8px;
+  background: linear-gradient(90deg, #cc6073, #cc6073); 
+  appearance: none; /* Removes default arrow for custom styling */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  width: 75%;
+}
+
+.destination-select:hover {
+  background: linear-gradient(90deg, #cc6073, #cc6073); /* Hover effect */
+  transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+.destination-select:focus {
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Green focus glow */
+}
+
+/* Adding a custom arrow to the dropdown */
+.destination-select::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  font-size: 16px;
+}
+
+/* Adjust for dark mode (if needed) */
+body.dark-mode .destination-select {
+  background: linear-gradient(90deg, #555, #333);
+  border-color: #777;
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .destination-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destination-image {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .package-list-detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .destination-name {
+    font-size: 1.5rem;
+  }
+
+  .destination-description {
+    font-size: 1rem;
+  }
+
+  .package-item {
+    padding: 15px;
+  }
+
+  .book-now-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}

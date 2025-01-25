@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a627fec.css",
+    "main.js": "/static/js/main.f98698c8.js",
+    "static/js/488.5625d912.chunk.js": "/static/js/488.5625d912.chunk.js",
+    "static/media/nyc.jpg": "/static/media/nyc.62c383b34d359befb0cd.jpg",
+    "static/media/discount-bannerAd.png": "/static/media/discount-bannerAd.402503eede0367ec6207.png",
+    "static/media/Singapore.jpg": "/static/media/Singapore.96fd15f649695ec08d51.jpg",
+    "static/media/form_bg.jpg": "/static/media/form_bg.27ecf9b04a6ea2c267e9.jpg",
+    "static/media/Paris.jpg": "/static/media/Paris.3f9fa878355af620f2ae.jpg",
+    "static/media/slider-banner-1.jpg": "/static/media/slider-banner-1.632ae2d432b2b425bfcb.jpg",
+    "static/media/form2_bg.jpg": "/static/media/form2_bg.34c814e69ab2a3d8c3eb.jpg",
+    "static/media/maldives.jpg": "/static/media/maldives.c254abdc84910e6c429b.jpg",
+    "static/media/Dubai.jpg": "/static/media/Dubai.2bf481b99c65966c54f2.jpg",
+    "static/media/contact-usImg.svg": "/static/media/contact-usImg.b008e8bbfe7eb85db635f89dcb805a22.svg",
+    "static/media/Kerala.jpg": "/static/media/Kerala.4afa01ec47657c682507.jpg",
+    "static/media/Thailand-Img.png": "/static/media/Thailand-Img.bcf61ab9e079f438bc9f.png",
+    "static/media/testimonial-user3.png": "/static/media/testimonial-user3.3e72fb9039c63ad925df.png",
+    "static/media/testimonial-user2.png": "/static/media/testimonial-user2.aa991a08798a1bdb8a59.png",
+    "static/media/testimonial-user1.png": "/static/media/testimonial-user1.767e302a251a890b93e7.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.9a627fec.css.map": "/static/css/main.9a627fec.css.map",
+    "main.f98698c8.js.map": "/static/js/main.f98698c8.js.map",
+    "488.5625d912.chunk.js.map": "/static/js/488.5625d912.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a627fec.css",
+    "static/js/main.f98698c8.js"
+  ]
+}
