@@ -8,10 +8,10 @@ const Blog = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // const apiUrl = process.env.REACT_APP_BACKEND_URL;
+    const API_URL = `${process.env.REACT_APP_BACKEND_URL}/api/auth/blogs`;
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://https://tourvelsm-backend-f9c12123307d.herokuapp.com/api/auth/blogs"); // Replace with your API endpoint
+        const response = await fetch(API_URL); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error("Failed to fetch blogs");
         }
