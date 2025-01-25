@@ -10,7 +10,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/auth/blogs"); // Replace with your API endpoint
+        const response = await fetch("http://https://tourvelsm-backend-f9c12123307d.herokuapp.com//api/auth/blogs"); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error("Failed to fetch blogs");
         }
