@@ -14,7 +14,7 @@ const DestinationList = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5000/api/destination/destinations/search?name=${encodeURIComponent(
+        `${process.env.REACT_APP_BACKEND_URL}/api/destination/destinations/search?name=${encodeURIComponent(
           searchTerm
         )}`
       );
