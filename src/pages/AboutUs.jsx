@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import FAQsAccordion from "../components/FAQ's/FAQsAccordion"; 
 
 const AboutUs = () => {
-  const API_URL_ABOUT = `${process.env.REACT_APP_BACKEND_URL}api/about-us`;
+  const API_URL_ABOUT = "https://tourvelsm-backend-f9c12123307d.herokuapp.com/api/about-us";
   const [aboutData, setAboutData] = useState(null);
 
   useEffect(() => {
