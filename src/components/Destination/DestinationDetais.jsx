@@ -6,6 +6,7 @@ import imagePaths from "../../Constrants/imagePath";
 import "./destination.css"; // Import the CSS file
 
 const DestinationDetails = () => {
+  const API_DESTINATION_DETAIL = process.env.REACT_APP_BACKEND_URL;
   const { id } = useParams();
   const [destination, setDestination] = useState(null);
 
@@ -16,7 +17,7 @@ const DestinationDetails = () => {
   const fetchDestination = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/destination/destinations/${id}`
+        `${API_DESTINATION_DETAIL}/api/destination/destinations/${id}`
       );
       const data = await response.json();
       setDestination(data);
