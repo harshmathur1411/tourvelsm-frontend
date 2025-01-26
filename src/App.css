@@ -405,7 +405,7 @@ outline: 0;
   display: none;
 }
 .dropdown.user-opt ul {
-  background: #cc6073;
+  background: #2e4c82;
   padding: 0px 0px;
   text-align: center;
   width: 220px;
@@ -421,6 +421,9 @@ outline: 0;
 .dropdown.user-opt li:last-child
 {
   border-bottom: 0;
+}
+.dropdown.user-opt li * {
+  color: #fff;
 }
 .blog-grid
 {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const DestinationList = () => {
+  const API_DESTINATION_LIST = process.env.REACT_APP_BACKEND_URL;
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
@@ -14,7 +15,7 @@ const DestinationList = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/api/destination/destinations/search?name=${encodeURIComponent(
+        `${API_DESTINATION_LIST}api/destination/destinations/search?name=${encodeURIComponent(
           searchTerm
         )}`
       );
