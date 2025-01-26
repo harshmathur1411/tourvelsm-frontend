@@ -422,10 +422,6 @@ outline: 0;
 {
   border-bottom: 0;
 }
-.dropdown.user-opt span
-{
-  font-weight: 800;
-}
 .blog-grid
 {
   display: flex;

@@ -299,8 +299,8 @@ const Navbar = () => {
                     <span>Welcome, {user.username}!</span>
                   </li>
                   <li className="navbar-item">
-                    <button onClick={handleLogout} className="btn btn-danger">
-                    <FontAwesomeIcon icon={faSignOutAlt} size="2x" color="blue" />
+                    <button onClick={handleLogout} className="btn">
+                    <FontAwesomeIcon icon={faSignOutAlt} color="#2e4c82" />
                       Logout
                     </button>
                   </li>
