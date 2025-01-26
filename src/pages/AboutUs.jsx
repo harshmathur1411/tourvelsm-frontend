@@ -5,12 +5,13 @@ import Navbar from "../components/Navbar";
 import FAQsAccordion from "../components/FAQ's/FAQsAccordion"; 
 
 const AboutUs = () => {
+  const API_URL_ABOUT = `${process.env.REACT_APP_BACKEND_URL}api/about-us`;
   const [aboutData, setAboutData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/about-us");
+        const response = await fetch(API_URL_ABOUT);
         const data = await response.json();
         setAboutData(data);
       } catch (error) {
