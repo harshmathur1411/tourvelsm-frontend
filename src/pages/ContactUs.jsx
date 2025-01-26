@@ -3,6 +3,7 @@ import BannerSection from "../Banner";
 import Navbar from "../components/Navbar";
 
 const ContactUs = () => {
+  const API_URL_CONTACT = `${process.env.REACT_APP_BACKEND_URL}api/auth/contact`;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,7 +18,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/auth/contact`, {
+      const response = await fetch(API_URL_CONTACT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
