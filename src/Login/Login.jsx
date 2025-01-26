@@ -7,6 +7,7 @@ import { login } from "../store/authSlice"; // Import login action
 import "./Login.css";
 
 const Login = () => {
+  const API_URL_LOGIN = `${process.env.REACT_APP_BACKEND_URL}api/auth/login`;
   const [Inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -26,7 +27,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", Inputs);
+      const response = await axios.post(API_URL_LOGIN, Inputs);
 
       if (response.data && response.data.user) {
         console.log("Login successful:", response.data);
