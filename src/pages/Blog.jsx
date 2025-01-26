@@ -8,7 +8,7 @@ const Blog = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const API_URL = `${process.env.REACT_APP_BACKEND_URL}/api/auth/blogs`;
+    const API_URL = `${process.env.REACT_APP_BACKEND_URL}api/auth/blogs`;
     const fetchBlogs = async () => {
       try {
         const response = await fetch(API_URL); // Replace with your API endpoint
