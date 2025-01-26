@@ -4,7 +4,7 @@ import "./signup.css";
 import { Link } from "react-router-dom";
 
 const SignupForm = () => {
-  const API_URL = "https://tourvelsm-backend-f9c12123307d.herokuapp.com/api";
+  const API_URL_REGISTER = "https://tourvelsm-backend-f9c12123307d.herokuapp.com/api";
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -32,7 +32,7 @@ const SignupForm = () => {
 
     try {
       const response = await axios.post(
-       `${API_URL}/auth/register`,
+       `${API_URL_REGISTER}/auth/register`,
         formData
       );
       console.log(response.data);
