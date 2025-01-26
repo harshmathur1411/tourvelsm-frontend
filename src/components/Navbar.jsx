@@ -176,6 +176,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { logout } from "../store/authSlice"; // Import logout action
 import DestinationList from "../components/Destination/DestinationList";
 
@@ -299,6 +300,7 @@ const Navbar = () => {
                   </li>
                   <li className="navbar-item">
                     <button onClick={handleLogout} className="btn btn-danger">
+                    <FontAwesomeIcon icon={faSignOutAlt} size="2x" color="blue" />
                       Logout
                     </button>
                   </li>

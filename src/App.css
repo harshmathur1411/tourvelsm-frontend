@@ -405,14 +405,22 @@ outline: 0;
   display: none;
 }
 .dropdown.user-opt ul {
-  background: #ddd;
-  padding: 10px 30px;
+  background: #cc6073;
+  padding: 0px 0px;
   text-align: center;
   width: 220px;
+  border-bottom: 1px solid #ddd;
+  margin: 0 !important;
 }
 .dropdown.user-opt li
 {
-  margin-bottom: 16px;
+      border-bottom: 1px solid #fff;
+    padding: 6px 1px;
+    color: #fff;
+}
+.dropdown.user-opt li:last-child
+{
+  border-bottom: 0;
 }
 .dropdown.user-opt span
 {
