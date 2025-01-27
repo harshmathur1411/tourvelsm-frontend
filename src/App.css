@@ -761,6 +761,11 @@ outline: 0;
 .newsletter-cover .form-group {
   width: 100% !important;
 }
+.navbar-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 235px;
+}
 }
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
