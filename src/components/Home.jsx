@@ -178,7 +178,7 @@ const Home = () => {
         <div className="container">
           <div className="contact-section subscribe-inner">
             <div className="row">
-              <div className="col-6">
+              <div className="col-xs-12 col-lg-6">
                 <div className="contact-bg">
                   <img
                     src={imagePaths.contactBg}
