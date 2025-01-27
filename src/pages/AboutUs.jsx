@@ -60,13 +60,13 @@ const AboutUs = () => {
       {aboutData.image && (
         <section className="about-image my-4">
           <div className="row">
-            <div className="col-6">
+            <div className="col-sm-6 col-lg-12">
               <div className="about-heading-sec">
                 <h2>Little More About Us</h2>
                 <p className="description my-4">{aboutData.description}</p>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-sm-6 col-lg-12">
               <div className="feature-sec-img">
               <img src={aboutData.image} alt="About Us" />
               </div>

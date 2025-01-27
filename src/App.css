@@ -766,6 +766,10 @@ outline: 0;
   display: inline-block;
   width: 235px;
 }
+.about-header .description
+{
+  padding: 0;
+}
 }
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
