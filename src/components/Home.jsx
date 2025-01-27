@@ -187,7 +187,7 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <div className="col-6">
+              <div className="col-xs-12 col-lg-6">
                 <div className="newsletter-cover">
                   <h3>newsletter</h3>
                   <h2>SUBSCRIBE NOW</h2>

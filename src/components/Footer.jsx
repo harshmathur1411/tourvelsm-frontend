@@ -17,16 +17,13 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about-us">About</Link>
             </li>
             <li>
               <Link to="/destinations">Destinations</Link>
             </li>
             <li>
-              <Link to="/packages">Packages</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/ContactUs">Contact</Link>
             </li>
           </ul>
         </div>

@@ -758,6 +758,9 @@ outline: 0;
 {
   padding: 5px !important;
 }
+.newsletter-cover .form-group {
+  width: 100% !important;
+}
 }
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
