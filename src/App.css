@@ -732,6 +732,32 @@ outline: 0;
   .about-card {
     max-width: 100%;
   }
+  .banner-text h2 {
+    font-size: 48px;
+}
+.banner-text
+{
+  padding: 0;
+}
+.navbar-ul li a {
+  text-decoration: none;
+  color: #fff;
+  width: 104px;
+  display: block;
+}
+.navbar-ul
+{
+  overflow: auto;
+}
+.listing-item
+{
+  width: 100%;
+  margin: 10px;
+}
+.choose-us p
+{
+  padding: 5px !important;
+}
 }
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {

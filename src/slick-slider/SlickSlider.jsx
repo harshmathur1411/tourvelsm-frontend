@@ -9,16 +9,34 @@ import "../../src/App.css";
 
 const SlickSlider = () => {
   const settings = {
-    dots: false,
-    arrow: true,
+    dots: true,
+    arrows: false, // Arrows disabled for better UX on smaller screens
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,
-    centerMode: true, // Enables centered view
-    centerPadding: "20px", // Adds padding between slides
+    centerMode: true,
+    centerPadding: "20px",
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet and below
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerPadding: "10px", // Adjust padding for smaller screens
+        },
+      },
+      {
+        breakpoint: 768, // Mobile
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for mobile
+        },
+      },
+    ],
   };
 
   const slides = [
@@ -43,7 +61,6 @@ const SlickSlider = () => {
       image: imagePaths.user3Img,
       rating: 3, // Rating out of 5
     },
-    // Add rating for other slides as needed
   ];
 
   return (
@@ -72,7 +89,6 @@ const SlickSlider = () => {
             <div className="user-profilePic">
               <img src={slide.image} alt={slide.comment} />
             </div>
-
             <p>{slide.comment}</p>
           </div>
         ))}
