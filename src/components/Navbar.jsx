@@ -1,183 +1,11 @@
-// import React, { useState, useEffect } from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import { Link } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faSearch, faUserCircle } from "@fortawesome/free-solid-svg-icons";
-// import DestinationList from "../components/Destination/DestinationList";
-// import { logout } from "../store/authSlice"; // Import logout action
-// import { useNavigate } from "react-router-dom";
-
-// const Navbar = () => {
-//   const user = useSelector((state) => state.auth.user); // Get user from Redux state
-//   const dispatch = useDispatch();
-//   const navigate = useNavigate();
-
-//   const handleLogout = () => {
-//     dispatch(logout()); // Dispatch logout action
-//     navigate("/signin");
-//   };
-
-//   const [isScrolled, setIsScrolled] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       if (window.scrollY > 0) {
-//         setIsScrolled(true);
-//       } else {
-//         setIsScrolled(false);
-//       }
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, []);
-
-//   return (
-//     <div>
-//       <div className={`d-flex top-bar ${isScrolled ? "scrolled" : ""}`}>
-//         <div className="container">
-//           <div className="navbar">
-//             <ul className="navbar-ul">
-//               <li>
-//                 <Link to="/">Home</Link>
-//               </li>
-//               <li>
-//                 <Link to="/blog">Blogs</Link>
-//               </li>
-//               <li>
-//                 <Link to="/about-us">About Us</Link>
-//               </li>
-//               <li>
-//                 <Link to="/contact-us">Contact Us</Link>
-//               </li>
-//               <li className="nav-item dropdown">
-//                 <a
-//                   className="nav-link dropdown-toggle"
-//                   data-bs-toggle="dropdown"
-//                   href="#"
-//                 >
-//                   Tours
-//                 </a>
-//                 <ul className="dropdown-menu">
-//                   <li>
-//                     <a className="dropdown-item" href="#">
-//                       Holiday Packages
-//                     </a>
-//                   </li>
-//                   <li>
-//                     <a className="dropdown-item" href="#">
-//                       Honeymoon Packages
-//                     </a>
-//                   </li>
-//                   <li>
-//                     <a className="dropdown-item" href="#">
-//                       Corporate Tours
-//                     </a>
-//                   </li>
-//                   <li>
-//                     <a className="dropdown-item" href="#">
-//                       Vacations
-//                     </a>
-//                   </li>
-//                 </ul>
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-//         <div className="search-box">
-//           <button
-//             type="button"
-//             className="btn search-button"
-//             data-bs-toggle="offcanvas"
-//             data-bs-target="#searchbar-box"
-//           >
-//             <FontAwesomeIcon
-//               icon={faSearch}
-//               style={{ color: "#fff", fontSize: "18px" }}
-//             />
-//           </button>
-//         </div>
-//         <div>
-//           <div className="dropdown user-opt">
-//             <button
-//               type="button"
-//               className="btn dropdown-toggle"
-//               data-bs-toggle="dropdown"
-//             >
-//               <FontAwesomeIcon
-//                 icon={faUserCircle}
-//                 style={{ color: "#fff", fontSize: "24px" }}
-//               />
-//             </button>
-//             <ul className="dropdown-menu">
-//               {user ? (
-//                 <>
-//                   <li className="navbar-item">
-//                     <span>Welcome, {user.username}!</span>
-//                   </li>
-//                   <li className="navbar-item">
-//                     <button onClick={handleLogout} className="btn btn-danger">
-//                       Logout
-//                     </button>
-//                   </li>
-//                 </>
-//               ) : (
-//                 <li className="navbar-item">
-//                   <button
-//                     onClick={() => navigate("/Signin")}
-//                     className="btn btn-primary"
-//                   >
-//                     Login
-//                   </button>
-//                 </li>
-//               )}
-//             </ul>
-//           </div>
-//           {/* {user ? (
-//             <>
-//               <span>Welcome, {user.username}!</span>
-//               <button onClick={handleLogout} className="btn btn-danger">
-//                 Logout
-//               </button>
-//             </>
-//           ) : (
-//             <button
-//               onClick={() => navigate("/Signin")}
-//               className="btn btn-primary"
-//             >
-//               Login
-//             </button>
-//           )} */}
-//         </div>
-//       </div>
-//       <div className="offcanvas offcanvas-top" id="searchbar-box">
-//         <div className="offcanvas-header text-center">
-//           <h1 className="offcanvas-title">Where do you want to go ?</h1>
-//           <button
-//             type="button"
-//             className="btn-close"
-//             data-bs-dismiss="offcanvas"
-//           ></button>
-//         </div>
-//         <div className="offcanvas-body">
-//           <DestinationList />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { logout } from "../store/authSlice"; // Import logout action
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { logout } from "../store/authSlice"; 
 import DestinationList from "../components/Destination/DestinationList";
 
 const Navbar = () => {
@@ -307,9 +135,11 @@ const Navbar = () => {
                 </>
               ) : (
                 <li className="navbar-item">
+                  <i>Hello Guest !</i> 
+                  <FontAwesomeIcon icon={faSignInAlt} color="#2e4c82" />
                   <button
                     onClick={() => navigate("/Signin")}
-                    className="btn btn-primary"
+                    className="btn"
                   >
                     Login
                   </button>
