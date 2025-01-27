@@ -17,7 +17,7 @@ const DestinationDetails = () => {
   const fetchDestination = async () => {
     try {
       const response = await fetch(
-        `${API_DESTINATION_DETAIL}/api/destination/destinations/${id}`
+        `${API_DESTINATION_DETAIL}api/destination/destinations/${id}`
       );
       const data = await response.json();
       setDestination(data);
