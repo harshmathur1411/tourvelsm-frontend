@@ -770,6 +770,9 @@ outline: 0;
 {
   padding: 0;
 }
+.contact-us-container {
+  width: 90%;
+}
 }
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {

@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import { logout } from "../store/authSlice"; 
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
+import { logout } from "../store/authSlice";
 import DestinationList from "../components/Destination/DestinationList";
 
 const Navbar = () => {
@@ -128,21 +128,20 @@ const Navbar = () => {
                   </li>
                   <li className="navbar-item">
                     <button onClick={handleLogout} className="btn">
-                    <FontAwesomeIcon icon={faSignOutAlt} color="#2e4c82" />
+                      <FontAwesomeIcon icon={faSignOutAlt} color="#2e4c82" />
                       Logout
                     </button>
                   </li>
                 </>
               ) : (
                 <li className="navbar-item">
-                  <i>Hello Guest !</i> 
-                  <FontAwesomeIcon icon={faSignInAlt} color="#2e4c82" />
-                  <button
-                    onClick={() => navigate("/Signin")}
-                    className="btn"
-                  >
-                    Login
-                  </button>
+                  <i>Hello Guest !</i>
+                  <div>
+                    <FontAwesomeIcon icon={faSignInAlt} color="#2e4c82" />
+                    <button onClick={() => navigate("/Signin")} className="btn">
+                      Login
+                    </button>
+                  </div>
                 </li>
               )}
             </ul>
