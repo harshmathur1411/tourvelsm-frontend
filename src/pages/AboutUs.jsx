@@ -5,13 +5,13 @@ import Navbar from "../components/Navbar";
 import FAQsAccordion from "../components/FAQ's/FAQsAccordion"; 
 
 const AboutUs = () => {
-  // const API_URL_ABOUT = "https://tourvelsm-backend-f9c12123307d.herokuapp.com/api/about-us";
+  const API_URL_ABOUT = "https://tourvelsm-backend-f9c12123307d.herokuapp.com/";
   const [aboutData, setAboutData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://tourvelsm-backend-f9c12123307d.herokuapp.com/api/about-us");
+        const response = await fetch(`${API_URL_ABOUT}api/about-us`);
         const data = await response.json();
         setAboutData(data);
       } catch (error) {

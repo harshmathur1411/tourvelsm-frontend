@@ -10,6 +10,8 @@ import DestinationList from "../components/Destination/DestinationList";
 
 const Navbar = () => {
   const API_URL_DESTINATION = `${process.env.REACT_APP_BACKEND_URL}api/destination/destinations`;
+  console.log("API URL:", API_URL_DESTINATION);
+
   const user = useSelector((state) => state.auth.user); // Get user from Redux state
   const dispatch = useDispatch();
   const navigate = useNavigate();
