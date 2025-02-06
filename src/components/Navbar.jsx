@@ -37,9 +37,16 @@ const Navbar = () => {
         const response = await fetch(API_URL_DESTINATION);
         const data = await response.json();
         console.log("Fetched destinations:", data);
-        setDestinations(data);
+
+        if (Array.isArray(data)) {
+          setDestinations(data);
+        } else {
+          console.error("Unexpected API response format:", data);
+          setDestinations([]);
+        }
       } catch (error) {
         console.error("Error fetching destinations:", error);
+        setDestinations([]);
       }
     };
 
@@ -86,11 +93,15 @@ const Navbar = () => {
                     <option value="" disabled>
                       Select a Destination
                     </option>
-                    {destinations.map((destination) => (
-                      <option key={destination._id} value={destination._id}>
-                        {destination.name}
-                      </option>
-                    ))}
+                    {Array.isArray(destinations) && destinations.length > 0 ? (
+                      destinations.map((destination) => (
+                        <option key={destination._id} value={destination._id}>
+                          {destination.name}
+                        </option>
+                      ))
+                    ) : (
+                      <option disabled>No Destinations Available</option>
+                    )}
                   </select>
                 </div>
               </li>
