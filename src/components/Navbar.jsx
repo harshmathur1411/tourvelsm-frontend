@@ -36,6 +36,7 @@ const Navbar = () => {
       try {
         const response = await fetch(API_URL_DESTINATION);
         const data = await response.json();
+        console.log("Fetched destinations:", data);
         setDestinations(data);
       } catch (error) {
         console.error("Error fetching destinations:", error);
