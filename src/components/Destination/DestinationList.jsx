@@ -30,7 +30,8 @@ const DestinationList = () => {
 
   // Function to handle view details
   const handleViewDetails = (id) => {
-    navigate(`/destination-details/${id}`); // Navigate to the details page with the ID
+    // navigate(`/destination-details/${id}`); // Navigate to the details page with the ID
+    window.open(`/destination-details/${id}`, "_blank");
   };
 
   return (
