@@ -109,6 +109,9 @@ const Navbar = () => {
             {/* Destination Dropdown */}
           </div>
         </div>
+        <Link to="/enquiry">
+          <button className="btn">Enquiry</button>
+        </Link>
         <div className="search-box">
           <button
             type="button"

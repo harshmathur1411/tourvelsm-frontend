@@ -34,6 +34,7 @@ const AppContent = () => {
         <Route path="/destination-details/:id" element={<DestinationDetails />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/resetpassword" element={<ForgotPassword />} />
+        <Route path="/enquiry" element={<EnquiryPage />} />
         
       </Routes>
     </div>

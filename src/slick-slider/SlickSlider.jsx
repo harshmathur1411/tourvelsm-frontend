@@ -10,7 +10,7 @@ import "../../src/App.css";
 const SlickSlider = () => {
   const settings = {
     dots: true,
-    arrows: false, // Arrows disabled for better UX on smaller screens
+    arrows: true, // Arrows disabled for better UX on smaller screens
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -32,6 +32,8 @@ const SlickSlider = () => {
         breakpoint: 768, // Mobile
         settings: {
           slidesToShow: 1,
+          dots:true,
+          arrow:false,
           slidesToScroll: 1,
           centerMode: false, // Disable center mode for mobile
         },
