@@ -105,7 +105,7 @@ const Navbar = () => {
                   </select>
                 </div>
               </li>
-            </ul>
+            </ul> 
             {/* Destination Dropdown */}
           </div>
         </div>
