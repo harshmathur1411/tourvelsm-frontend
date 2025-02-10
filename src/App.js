@@ -11,6 +11,7 @@ import ContactUs from "./pages/ContactUs";
 import Blog from "./pages/Blog";
 import DestinationDetails from "./components/Destination/DestinationDetais";
 import AboutUs from "./pages/AboutUs";
+import EnquiryForm from "./pages/EnquiryForm";
 import { useEffect, useState } from "react";
 
 const AppContent = () => {
@@ -34,7 +35,7 @@ const AppContent = () => {
         <Route path="/destination-details/:id" element={<DestinationDetails />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/resetpassword" element={<ForgotPassword />} />
-        <Route path="/enquiry" element={<EnquiryPage />} />
+        <Route path="/enquiry" element={<EnquiryForm />} />
         
       </Routes>
     </div>
