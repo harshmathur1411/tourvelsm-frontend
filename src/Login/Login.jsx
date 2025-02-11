@@ -25,17 +25,18 @@ const Login = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await axios.post(API_URL_LOGIN, Inputs);
-
+  
       if (response.data && response.data.user) {
         console.log("Login successful:", response.data);
-        dispatch(login(response.data.user)); // Dispatch login action
-        setInputs({
-          email: "",
-          password: "",
-        });
+  
+        // Store token in localStorage for each user separately
+        localStorage.setItem(`user_${response.data.user.email}`, JSON.stringify(response.data));
+  
+        dispatch(login(response.data.user));
+        setInputs({ email: "", password: "" });
         navigate("/");
       } else {
         alert("Login failed. Email not found.");
@@ -45,6 +46,7 @@ const Login = () => {
       alert("Failed to sign in. Please check your credentials.");
     }
   };
+  
 
   return (
     <div>

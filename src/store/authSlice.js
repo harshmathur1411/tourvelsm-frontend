@@ -1,23 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  user: JSON.parse(localStorage.getItem("user")) || null, // Load user from localStorage
+
+const checkTokenValidity = (users) => {
+  return users.filter((user) => {
+    const decodedToken = JSON.parse(atob(user.accessToken.split(".")[1])); // Decode JWT
+    return decodedToken.exp * 1000 > Date.now(); // Check if token is still valid
+  });
 };
 
 const authSlice = createSlice({
   name: "auth",
-  initialState,
+  initialState: { users: [] },
   reducers: {
     login: (state, action) => {
-      state.user = action.payload;
-      localStorage.setItem("user", JSON.stringify(action.payload)); // Save to localStorage
+      state.users.push(action.payload);
     },
-    logout: (state) => {
-      state.user = null;
-      localStorage.removeItem("user"); // Remove from localStorage
+    logout: (state, action) => {
+      state.users = state.users.filter(user => user.email !== action.payload.email);
     },
+    checkAuth: (state) => {
+      state.users = checkTokenValidity(state.users);
+    }
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout, checkAuth } = authSlice.actions;
 export default authSlice.reducer;

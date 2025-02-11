@@ -34,7 +34,10 @@ const EnquiryForm = () => {
   };
 
   return (
+    
     <div className="container mt-4">
+         <Navbar />
+         <BannerSection headingText={"Enquiry Form"} />
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card shadow-lg p-4">
