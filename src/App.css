@@ -592,6 +592,7 @@ outline: 0;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   width: 100%;
   padding: 30px;
+  min-height: 740px;
 }
 .season-destination-img {
   width: 100%;
@@ -718,6 +719,20 @@ outline: 0;
   line-height: 38px;
   color: #2e4c82;
   font-weight: bold;
+}
+.enquire-nowBtn
+{
+  background: #ed143d;
+  color: #fff;
+  max-width: 250px;
+  width: 135px;
+  padding: 10px 5px;
+  margin: 20px;
+}
+.btn-primary
+{
+  background-color:  #cc6073 !important;
+  color: #fff !important;
 }
 /* Responsive Design */
 @media (max-width: 768px) {
