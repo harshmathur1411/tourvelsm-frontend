@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EnquiryForm = ({ placeId }) => {
+const EnquiryForm = ({ }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,7 +20,7 @@ const EnquiryForm = ({ placeId }) => {
       const response = await fetch(API_URL , {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, placeId }),
+        body: JSON.stringify({ ...formData }),
       });
 
       const data = await response.json();
