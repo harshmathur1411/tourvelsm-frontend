@@ -64,7 +64,7 @@ const Navbar = () => {
   const handleDestinationSelect = (event) => {
     const destinationId = event.target.value;
     if (destinationId) {
-      navigate(`/destination-details/${destinationId}`);
+      window.open(`/destination-details/${destinationId}`);
     }
   };
 
