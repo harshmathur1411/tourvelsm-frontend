@@ -8,11 +8,8 @@ import DestinationList from "../components/Destination/DestinationList";
 
 const Navbar = () => {
   const API_URL_DESTINATION = `${process.env.REACT_APP_BACKEND_URL}api/destination/destinations`;
-  console.log("API URL:", API_URL_DESTINATION);
 
-  const users = useSelector((state) => state.auth.users);
-  console.log("Active users in Navbar:", users);
-
+  const users = useSelector((state) => state.auth.users) || []; // Ensure users is always an array
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -36,7 +33,6 @@ const Navbar = () => {
       try {
         const response = await fetch(API_URL_DESTINATION);
         const data = await response.json();
-        console.log("Fetched destinations:", data);
 
         if (Array.isArray(data)) {
           setDestinations(data);
@@ -54,8 +50,8 @@ const Navbar = () => {
   }, []);
 
   const handleLogout = (email) => {
-    dispatch(logout({ email }));
-    localStorage.removeItem(`user_${email}`);
+    dispatch(logout({ email })); // Logout only the selected user
+    localStorage.removeItem(`user_${email}`); // Remove from localStorage
     navigate("/signin");
   };
 
@@ -82,7 +78,9 @@ const Navbar = () => {
                     <option value="" disabled>Select a Destination</option>
                     {Array.isArray(destinations) && destinations.length > 0 ? (
                       destinations.map((destination) => (
-                        <option key={destination._id} value={destination._id}>{destination.name}</option>
+                        <option key={destination._id} value={destination._id}>
+                          {destination.name}
+                        </option>
                       ))
                     ) : (
                       <option disabled>No Destinations Available</option>
@@ -93,7 +91,9 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <Link to="/enquiry"><button className="btn">Enquiry</button></Link>
+        <Link to="/enquiry">
+          <button className="btn">Enquiry</button>
+        </Link>
         <div className="search-box">
           <button type="button" className="btn search-button" data-bs-toggle="offcanvas" data-bs-target="#searchbar-box">
             <FontAwesomeIcon icon={faSearch} style={{ color: "#fff", fontSize: "18px" }} />
@@ -119,7 +119,9 @@ const Navbar = () => {
                   <i>Hello Guest!</i>
                   <div>
                     <FontAwesomeIcon icon={faSignInAlt} color="#2e4c82" />
-                    <button onClick={() => navigate("/Signin")} className="btn">Login</button>
+                    <button onClick={() => navigate("/signin")} className="btn">
+                      Login
+                    </button>
                   </div>
                 </li>
               )}
