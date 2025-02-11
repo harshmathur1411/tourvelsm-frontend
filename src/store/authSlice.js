@@ -1,25 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const checkTokenValidity = (user) => {
+  if (!user || !user.accessToken) return null;
 
-const checkTokenValidity = (users) => {
-  return users.filter((user) => {
+  try {
     const decodedToken = JSON.parse(atob(user.accessToken.split(".")[1])); // Decode JWT
-    return decodedToken.exp * 1000 > Date.now(); // Check if token is still valid
-  });
+    return decodedToken.exp * 1000 > Date.now() ? user : null; // Return user only if token is valid
+  } catch (error) {
+    console.error("Invalid token:", error);
+    return null;
+  }
 };
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: { users: [] },
+  initialState: { user: null }, // Store only one active user
   reducers: {
     login: (state, action) => {
-      state.users.push(action.payload);
+      state.user = action.payload; // Store only the latest logged-in user
     },
-    logout: (state, action) => {
-      state.users = state.users.filter(user => user.email !== action.payload.email);
+    logout: (state) => {
+      state.user = null; // Clear the logged-in user
     },
     checkAuth: (state) => {
-      state.users = checkTokenValidity(state.users);
+      state.user = checkTokenValidity(state.user);
     }
   },
 });
