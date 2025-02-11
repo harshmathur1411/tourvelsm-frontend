@@ -16,7 +16,8 @@ const EnquiryForm = ({ placeId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://tourvelsm-backend-f9c12123307d.herokuapp.com/api/enquiries", {
+        const API_URL = `${process.env.REACT_APP_BACKEND_URL}api/enquiries`;
+      const response = await fetch(API_URL , {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, placeId }),
