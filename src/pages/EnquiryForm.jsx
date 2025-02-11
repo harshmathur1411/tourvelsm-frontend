@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import BannerSection from "../Banner";
+import Navbar from "../components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const EnquiryForm = () => {
