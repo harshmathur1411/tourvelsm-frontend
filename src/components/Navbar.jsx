@@ -14,7 +14,7 @@ import DestinationList from "../components/Destination/DestinationList";
 const Navbar = () => {
   const API_URL_DESTINATION = `${process.env.REACT_APP_BACKEND_URL}api/destination/destinations`;
 
-  const user = useSelector((state) => state.auth.user); // Correct selector
+  const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -127,40 +127,31 @@ const Navbar = () => {
           </button>
         </div>
         <div>
-          <div className="dropdown user-opt">
-            <button
-              type="button"
-              className="btn dropdown-toggle"
-              data-bs-toggle="dropdown"
-            >
-              <FontAwesomeIcon
-                icon={faUserCircle}
-                style={{ color: "#fff", fontSize: "24px" }}
-              />
+        <div>
+    <div className="dropdown user-opt">
+      <button type="button" className="btn dropdown-toggle" data-bs-toggle="dropdown">
+        <FontAwesomeIcon icon={faUserCircle} style={{ color: "#fff", fontSize: "24px" }} />
+      </button>
+      <ul className="dropdown-menu">
+        {user ? (
+          <li className="navbar-item">
+            <span>Welcome, {user.username || "User"}!</span>
+            <button onClick={handleLogout} className="btn">
+              <FontAwesomeIcon icon={faSignOutAlt} color="#2e4c82" /> Logout
             </button>
-            <ul className="dropdown-menu">
-              {user ? (
-                <li className="navbar-item">
-                  <span>Welcome, {user.username || "User"}!</span>{" "}
-                  {/* Fix: Ensure username is displayed */}
-                  <button onClick={() => handleLogout()} className="btn">
-                    <FontAwesomeIcon icon={faSignOutAlt} color="#2e4c82" />{" "}
-                    Logout
-                  </button>
-                </li>
-              ) : (
-                <li className="navbar-item">
-                  <i>Hello Guest!</i>
-                  <div>
-                    <FontAwesomeIcon icon={faSignInAlt} color="#2e4c82" />
-                    <button onClick={() => navigate("/signin")} className="btn">
-                      Login
-                    </button>
-                  </div>
-                </li>
-              )}
-            </ul>
-          </div>
+          </li>
+        ) : (
+          <li className="navbar-item">
+            <i>Hello Guest!</i>
+            <div>
+              <FontAwesomeIcon icon={faSignInAlt} color="#2e4c82" />
+              <button onClick={() => navigate("/signin")} className="btn">Login</button>
+            </div>
+          </li>
+        )}
+      </ul>
+    </div>
+  </div>
         </div>
       </div>
       <div className="offcanvas offcanvas-top" id="searchbar-box">

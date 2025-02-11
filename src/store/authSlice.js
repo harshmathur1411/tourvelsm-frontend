@@ -12,18 +12,27 @@ const checkTokenValidity = (user) => {
   }
 };
 
+// Load user from localStorage when Redux initializes
+const storedUser = localStorage.getItem("loggedInUser");
+const initialState = {
+  user: storedUser ? checkTokenValidity(JSON.parse(storedUser)) : null,
+};
+
 const authSlice = createSlice({
   name: "auth",
-  initialState: { user: null }, // Store only one active user
+  initialState,
   reducers: {
     login: (state, action) => {
-      state.user = action.payload; // Store only the latest logged-in user
+      state.user = action.payload;
+      localStorage.setItem("loggedInUser", JSON.stringify(action.payload)); // Update localStorage
     },
     logout: (state) => {
-      state.user = null; // Clear the logged-in user
+      state.user = null;
+      localStorage.removeItem("loggedInUser"); // Remove user from localStorage
     },
     checkAuth: (state) => {
-      state.user = checkTokenValidity(state.user);
+      const storedUser = localStorage.getItem("loggedInUser");
+      state.user = storedUser ? checkTokenValidity(JSON.parse(storedUser)) : null;
     }
   },
 });

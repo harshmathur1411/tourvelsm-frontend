@@ -18,19 +18,17 @@ const Login = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await axios.post(API_URL_LOGIN, inputs);
-
+  
       if (response.data && response.data.user) {
         console.log("Login successful:", response.data);
-
-        // Store token in localStorage
+  
+        // Update localStorage and Redux
         localStorage.setItem("loggedInUser", JSON.stringify(response.data.user));
-
-        // Dispatch login action
         dispatch(login(response.data.user));
-
+  
         setInputs({ email: "", password: "" });
         navigate("/");
       } else {
@@ -41,6 +39,7 @@ const Login = () => {
       alert("Failed to sign in. Please check your credentials.");
     }
   };
+  
 
   return (
     <div className="login-form">
