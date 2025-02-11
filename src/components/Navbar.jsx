@@ -55,8 +55,9 @@ const Navbar = () => {
   }, []);
 
   const handleLogout = (email) => {
-    dispatch(logout({ email })); // Logout only the selected user
-    localStorage.removeItem(`user_${email}`); // Remove from localStorage
+    dispatch(logout()); // Logout only the selected user
+    // localStorage.removeItem(`user_${email}`); // Remove from localStorage
+    localStorage.removeItem("loggedInUser"); // Remove only the logged-in user
     navigate("/signin");
   };
 
@@ -135,7 +136,7 @@ const Navbar = () => {
       <ul className="dropdown-menu">
         {user ? (
           <li className="navbar-item">
-            <span>Welcome, {user.username || "User"}!</span>
+            <div>Welcome, {user.username || "User"}!</div>
             <button onClick={handleLogout} className="btn">
               <FontAwesomeIcon icon={faSignOutAlt} color="#2e4c82" /> Logout
             </button>

@@ -20,19 +20,20 @@ const initialState = {
 
 const authSlice = createSlice({
   name: "auth",
-  initialState,
+  initialState: { user: JSON.parse(localStorage.getItem("loggedInUser")) || null },
   reducers: {
     login: (state, action) => {
       state.user = action.payload;
-      localStorage.setItem("loggedInUser", JSON.stringify(action.payload)); // Update localStorage
+      // localStorage.setItem("loggedInUser", JSON.stringify(action.payload)); // Update localStorage
     },
     logout: (state) => {
       state.user = null;
-      localStorage.removeItem("loggedInUser"); // Remove user from localStorage
+      // localStorage.removeItem("loggedInUser"); // Remove user from localStorage
     },
     checkAuth: (state) => {
-      const storedUser = localStorage.getItem("loggedInUser");
-      state.user = storedUser ? checkTokenValidity(JSON.parse(storedUser)) : null;
+      // const storedUser = localStorage.getItem("loggedInUser");
+      // state.user = storedUser ? checkTokenValidity(JSON.parse(storedUser)) : null;
+      state.user = checkTokenValidity(state.user);
     }
   },
 });
