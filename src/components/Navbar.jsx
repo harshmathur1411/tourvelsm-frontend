@@ -12,7 +12,10 @@ const Navbar = () => {
   const API_URL_DESTINATION = `${process.env.REACT_APP_BACKEND_URL}api/destination/destinations`;
   console.log("API URL:", API_URL_DESTINATION);
 
-  const user = useSelector((state) => state.auth.user); // Get user from Redux state
+  const users = useSelector((state) => state.auth.users);
+  const user = users.length > 0 ? users[users.length - 1] : null;
+  console.log("Current user in Navbar:", user); // Debugging
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
