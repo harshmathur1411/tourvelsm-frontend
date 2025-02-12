@@ -112,7 +112,7 @@ const Navbar = () => {
           </div>
         </div>
         <Link to="/enquiry">
-          <button className="btn enquire-nowBtn">Enquiry</button>
+          <button className="btn enquire-nowBtn">Enquire Now</button>
         </Link>
         <div className="search-box">
           <button
