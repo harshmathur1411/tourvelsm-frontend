@@ -43,7 +43,7 @@ const EnquiryForm = () => {
       <div className="row justify-content-center mt-5">
         <div className="col-md-6">
           <div className="card shadow-lg p-4">
-            <h2 className="text-center mb-4">Enquiry Form</h2>
+            <h2 className="text-center mb-4">Enquiry Form</h2> 
 
             {message && <div className="alert alert-info text-center">{message}</div>}
 
